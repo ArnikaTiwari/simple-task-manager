@@ -1,0 +1,403 @@
+:root {
+  --bg: #f7f1e8;
+  --bg-accent: #f2dfc2;
+  --surface: rgba(255, 252, 247, 0.86);
+  --surface-strong: #fffaf2;
+  --text: #1f1a14;
+  --muted: #6e6256;
+  --line: rgba(70, 51, 27, 0.12);
+  --brand: #c75b12;
+  --brand-dark: #9d4306;
+  --green: #1f7a43;
+  --shadow: 0 18px 50px rgba(81, 47, 10, 0.12);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(236, 186, 115, 0.45), transparent 28%),
+    radial-gradient(circle at right 20%, rgba(126, 178, 164, 0.25), transparent 24%),
+    linear-gradient(180deg, var(--bg) 0%, #f9f7f3 100%);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 48px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 360px);
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  max-width: 10ch;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.82rem;
+  color: var(--brand-dark);
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.hero-card,
+.panel,
+.edit-form {
+  background: var(--surface);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero-card strong {
+  font-size: 1.5rem;
+}
+
+.hero-card code {
+  background: rgba(199, 91, 18, 0.08);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.metric-label,
+.panel-head p,
+.toolbar p,
+.task-meta,
+.form-message,
+.list-state {
+  color: var(--muted);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.panel {
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.panel-head h2,
+.toolbar h2 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.panel-head p,
+.toolbar p {
+  margin: 0;
+}
+
+.task-form,
+.edit-form {
+  display: grid;
+  gap: 16px;
+}
+
+.task-form {
+  margin-top: 20px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+}
+
+label span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid rgba(95, 77, 57, 0.18);
+  background: var(--surface-strong);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(199, 91, 18, 0.65);
+  transform: translateY(-1px);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.primary-btn,
+.ghost-btn,
+.filter-btn,
+.toggle-btn {
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.primary-btn:hover,
+.ghost-btn:hover,
+.filter-btn:hover,
+.toggle-btn:hover {
+  transform: translateY(-1px);
+}
+
+.primary-btn {
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand) 0%, #df7b2f 100%);
+  color: white;
+  font-weight: 700;
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.toolbar {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 22px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: rgba(199, 91, 18, 0.08);
+  color: var(--brand-dark);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 600;
+}
+
+.filter-btn.active {
+  background: var(--brand);
+  color: white;
+}
+
+.filter-btn span {
+  opacity: 0.8;
+}
+
+.list-state {
+  padding: 18px 0;
+}
+
+.task-list {
+  display: grid;
+  gap: 14px;
+}
+
+.task-card {
+  display: flex;
+  gap: 18px;
+  align-items: start;
+  justify-content: space-between;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255, 251, 245, 0.92);
+  border: 1px solid rgba(95, 77, 57, 0.12);
+}
+
+.task-main {
+  display: flex;
+  gap: 14px;
+  align-items: start;
+  min-width: 0;
+}
+
+.toggle-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid rgba(95, 77, 57, 0.18);
+  flex: 0 0 auto;
+}
+
+.toggle-btn.done {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+
+.task-copy {
+  min-width: 0;
+}
+
+.task-topline {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.task-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.task-desc {
+  margin: 8px 0 10px;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+.status-badge {
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.status-badge.pending {
+  background: rgba(199, 91, 18, 0.12);
+  color: var(--brand-dark);
+}
+
+.status-badge.completed {
+  background: rgba(31, 122, 67, 0.12);
+  color: var(--green);
+}
+
+.task-actions,
+.dialog-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ghost-btn {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(31, 26, 20, 0.06);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.ghost-btn.delete-btn {
+  background: rgba(176, 42, 42, 0.08);
+  color: #9d2727;
+}
+
+.form-message {
+  min-height: 22px;
+  margin: 0;
+}
+
+.form-message.error {
+  color: #9d2727;
+}
+
+.edit-dialog {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.edit-dialog::backdrop {
+  background: rgba(31, 26, 20, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.edit-form {
+  width: min(560px, calc(100vw - 24px));
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 20px;
+  }
+
+  .panel,
+  .hero-card {
+    padding: 18px;
+  }
+
+  .task-card {
+    flex-direction: column;
+  }
+
+  .task-actions {
+    width: 100%;
+  }
+}
