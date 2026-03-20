@@ -2,6 +2,8 @@
 
 Taskr is a full deployable task manager built as a single Node.js application. It serves the frontend directly from `public/` and persists tasks in `data/tasks.json`, so there is no database or frontend build step required.
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ArnikaTiwari/simple-task-manager)
+
 ## Stack
 
 - Node.js 18+
