@@ -74,4 +74,8 @@ This project is ready for simple Node hosting platforms such as Render, Railway,
 - Start command: `npm start`
 - Node version: `18+`
 
+### Render
+
+This repository includes `render.yaml`, so you can create the service directly from the repo.
+
 If you deploy to an ephemeral filesystem, task data will reset when the instance is recreated. For persistent production data, swap `data/tasks.json` for a real database or attach persistent storage.
